@@ -18,7 +18,7 @@ class IndexController extends ControllerBase {
 		$activeTheme = ThemesManager::getActiveTheme();
 		$themes = Display::getThemes();
 		if (\count($themes) > 0) {
-			$this->loadView('@activeTheme/main/vMenu.html', \compact('themes', 'activeTheme'));
+			$this->loadView('@activeTheme/OrgaController/base.html', \compact('themes', 'activeTheme'));
 		}
 		$this->loadView($defaultPage, \compact('defaultPage', 'links', 'infos', 'activeTheme'));
 	}

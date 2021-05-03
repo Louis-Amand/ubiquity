@@ -42,21 +42,5 @@ return array(
 			"unstage file(s) from index"=>"git+rm+--cached+%3Cfile-name%3E",
 			"stash & pull (overwrite local changes with pull)"=>"git+stash%0Agit+pull%0A"
 			],
-	"part1"=>[
-			"models",
-			"routes",
-			"controllers",
-			"cache",
-			"rest",
-			"config",
-			"logs"
-			],
-	"part2"=>[
-			"seo",
-			"translate",
-			"themes",
-			"maintenance",
-			"composer"
-			],
-	"style"=>"inverted"
+	"activeDb"=>"default"
 	);

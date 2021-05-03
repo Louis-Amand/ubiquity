@@ -1,0 +1,20 @@
+<div class="ui container">
+    <div class="ui inverted secondary menu">
+        {% block menu %}
+            <a href="{{ path('orga.menu') }}" class="active item" data-target="body">Accueil</a>
+            <a href="{{ path('orga.addOrgaForm') }}" class="active item" data-target="body">Ajouter Organisation</a>
+            <a href="{{ path('orga.addGroup') }}" class="active item" data-target="body">Ajouter Groupe</a>
+        {% endblock %}
+    </div>
+    <div class="ui attached inverted segment">
+        {% block header %}
+        {% endblock %}
+    </div>
+    <div class="ui attached segment">
+        {% block body %}
+        {% endblock %}
+    </div>
+</div>
+{% block scripts %}
+    {{ script_foot | raw }}
+{% endblock %}

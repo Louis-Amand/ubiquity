@@ -1,0 +1,32 @@
+{% extends "OrgaController/base.html" %}
+{% block header %}
+<button class="ui positive basic button">+ Ajouter un Groupe</button>
+{% endblock %}
+
+{% block body %}
+<!--FORMULAIRE-->
+    <form method="post" action="{{ path('orga.addGroupForm') }}">
+        <label>Nom :</label><br/>
+         <div class="ui input">
+            <input name="name" type="text" placeholder="nom">
+         </div>
+         <br/><br/>
+        <label>Mail :</label><br/>
+        <div class="ui input">
+            <input name="email" type="mail" placeholder="mail">
+         </div>
+         <br/><br/>
+        <label>Alias</label><br/>
+        <div class="ui input">
+            <input name="alias" type="text" placeholder="alias">
+        </div><br/><br/>
+        <select name="organization">
+            {% for orga in all %}
+                <option value="{{ orga.id }}">{{ orga }}</option>
+            {% endfor %}
+        </select><br/><br/>
+        <button class="ui primary button" value="valid" name="valid">Valider</button>
+        <button class="ui danger button" value="cancel" name="cancel">Annuler</button>
+    </form>
+    <!--FIN FORMULAIRE-->
+{% endblock %}

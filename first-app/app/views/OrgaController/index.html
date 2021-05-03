@@ -1,0 +1,23 @@
+
+{% extends "OrgaController/base.html" %}
+{% block header %}
+    Organisations
+{% endblock %}
+{% block body %}
+<div class="ui icon positive message">
+    <i class="ui calandar square icon"></i>
+    <div class="content">
+        <div class="header">Bienvenue sur la Messagerie !</div>
+        <p>Voici la liste des organisations consitituant cette application de Messagerie.</p>
+    </div>
+</div>
+
+    {% for orga in all %}
+          <h4><a href="{{ path('orga.getOne', [orga.id]) }}">{{ orga }}</a></h4>
+          <a href="{{ path('orga.updateOrga', [orga.id]) }}" class="ui positive button">Modifier</a>
+          <a href="{{ path('orga.delete', [orga.id]) }}" class="ui negative button">Supprimer</a>
+        
+    {% endfor %}
+
+
+{% endblock %}

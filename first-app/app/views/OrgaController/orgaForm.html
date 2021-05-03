@@ -1,0 +1,31 @@
+{% extends "OrgaController/base.html" %}
+{% block header %}
+<button class="ui positive basic button">+ Ajouter une Organisation</button>
+{% endblock %}
+
+{% block body %}
+<!--FORMULAIRE-->
+    <form action="{{ path(route) }}" method="post">
+        <label>Nom :</label><br/>
+        <div class="ui input">
+            <input name="name" type="text" placeholder="Nom">
+        </div>
+        <br/><br/>
+        <label class="ml-4">Domaine :</label><br/>
+        <div class="ui input">
+            <input name="domain" type="text" placeholder="Domaine">
+        </div>
+        <br/><br/>
+        <label class="ml-4">Alias :</label><br/>
+        <div class="ui input">
+            <input name="alias" type="text" placeholder="Alias">
+        </div>
+        <br/><br/>
+        <button class="ui primary button" value="valid" name="valid">Valider</button>
+        <button class="ui danger button" value="cancel" name="cancel">Annuler</button>
+<!--FIN FORMULAIRE-->
+        {% if idOrga is defined %}
+            <input type="hidden" name="id" value="{{ idOrga }}">
+        {% endif %}
+    </form>
+{% endblock %}

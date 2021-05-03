@@ -1,0 +1,22 @@
+{% extends "OrgaController/base.html" %}
+{% block header %}
+    <h1>{{ title }}</h1>
+{% endblock %}
+
+{% block body %}
+<div class="ui icon negative message">
+    <i class="ui danger square icon"></i>
+    <div class="content">
+        <div class="header">Attention suppression</div>
+        <p>Etes vous sur de vouloir supprimer cette organisation de la messagerie ?</p>
+    </div>
+</div>
+
+    <form method="post" action="{{ path("orga.deletePost") }}">
+        {% if idOrga is defined %}
+            <input type="hidden" name="id" value="{{ idOrga }}">
+        {% endif %}
+        <a class="ui primary button">Oui</a>
+    </form><br/>
+    <a href="{{ path('orga.menu') }}" class="ui negative button">Non</a>
+{% endblock %}
