@@ -1,0 +1,13 @@
+<div class="ui icon {{type}} inverted message">
+<i class="{{ icon }} icon"></i>
+    <div class="content">
+        <div class="header">{{ header }}</div>
+        {{message | raw }}
+        {% if buttons %}
+            <div class="ui divider"></div>
+            {% for bt in buttons %}
+            <a href="{{ bt['url'] }}" class="ui {{ bt['style'] }} button">{{ bt['caption'] }}</a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>

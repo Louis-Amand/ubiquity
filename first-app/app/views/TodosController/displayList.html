@@ -1,0 +1,35 @@
+<!--View associated to displayList action of TodosController controller -->
+<div class="ui inverted segment">
+    <div class="ui inverted relaxed divided list">
+    {% for item in list %}
+        <div class="item">
+            <div class="item{{ loop.index0 }}">{{item}}</div>
+            <form class="ui inline inverted form " action="{{ path("todos.edit") ~ loop.index0}}" method="post">
+                <div class="field item{{ loop.index0 }}" style="display: none">
+                    <input placeholder="Modification element" name="editElement">
+                </div>
+            </form>
+            <button class="ui circular mini icon inverted red button right floated" onclick="location.href='{{ path("todos.delete") ~ loop.index0}}'"><i class="ui times icon"></i></button>
+            <button class="ui circular mini icon inverted button right floated buttonEdit" id="{{ loop.index0 }}"><i class="ui edit icon"></i></button>
+        </div>
+        
+    {% endfor %}
+        <div class="item">
+            <form class="ui inline inverted form" action="{{ path('todos.add') }}" method="post">
+                <div class="two fields _form" style="display: none">
+                    <textarea placeholder="Saisir vos éléments sur chaque ligne" name="elements" rows="5"></textarea>
+                    <button class="ui mini green icon button"><i class="ui check circle outline icon"></i></button>
+                </div>
+                <div class="field _form">
+                    <input placeholder="Nouvel élément" name="element">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{{ script_foot | raw }}
+
+
+
+
+
