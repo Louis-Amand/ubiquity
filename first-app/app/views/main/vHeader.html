@@ -13,5 +13,16 @@
 {% endblock %}
 </head>
 <body>
+	{%  block menu %}
+    <div class="ui basic inverted segment">
+        <div class="ui container">
+            <div class="ui inverted secondary menu">
+                <a href="{{ path('home') }}" class="item">Home</a>
+                <div class="item">{{ _userInfo|raw }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
 {% block head %}
+<div id="page-container" class="ui container">
 {% endblock %}
